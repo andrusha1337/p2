@@ -17,8 +17,16 @@ $(document).ready(function () {
         var name = $(this);
         var price = name.next();
         s += Number(price.text());
-        tab.append("<tr><td class='cell'>" + name.text() +
-            "</td><td class='cell'>" + price.text() + "</td></tr>");
+        tab.append("<tr></tr>");
+        var line = tab.find("tr").last();
+        line.append("<td></td>");
+        var cell = line.find("td").last();
+        cell.addClass("cell");
+        cell.text(name.text());
+        line.append("<td></td>");
+        cell = line.find("td").last();
+        cell.addClass("cell");
+        cell.append(price.text());
     });
 
     $("#add").on("click", function () {
@@ -29,8 +37,16 @@ $(document).ready(function () {
             alert("Пожалуйста, запоните все поля!");
         else {
             s += Number(price.val());
-            tab.append("<tr><td class='cell'>" + name.val() +
-                "</td><td class='cell'>" + price.val() + "</td></tr>");
+            tab.append("<tr></tr>");
+            var line = tab.find("tr").last();
+            line.append("<td></td>");
+            var cell = line.find("td").last();
+            cell.addClass("cell");
+            cell.text(name.text());
+            line.append("<td></td>");
+            cell = line.find("td").last();
+            cell.addClass("cell");
+            cell.append(price.text());
             name.val("");
             price.val("");
         }

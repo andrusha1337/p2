@@ -2,24 +2,27 @@
 
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script type="text/javascript" src="pr2.js"></script>
     <title>Заказ товаров</title>
     <style>
-        #t {
+        .t {
             background-color: greenyellow;
             border-color: black;
         }
-        #Tab > table {
+
+        .Tab > table {
             margin-right: 50px;
             background-color: greenyellow;
             border-color: black;
-        } 
+        }
+
         body {
             background-color: pink;
         }
-        #Table {
+
+        .Table {
             position: absolute;
             top: 1px;
             left: 350px;
@@ -27,71 +30,75 @@
     </style>
 </head>
 <body>
+<p>
+    <b>Оформление заказа товаров</b>
+</p>
+<div class="Tab">
     <p>
-        <b>Оформление заказа товаров</b>
+        Таблица товаров (нажмите на<br/>товар, чтобы добавить в список):
     </p>
-    <div id="Tab">
-        <p >
-            Таблица товаров (нажмите на<br />товар, чтобы добавить в список):
-        </p>
-        <table border="1">
-            <tr>
-                <th>Наименование</th>
-                <th>Цена товара</th>
-            </tr>
-            <tr>
-                <td class="imp">Карандаш</td>
-                <td>100</td>
-            </tr>
-            <tr>
-                <td class="imp">Ручка</td>
-                <td>150</td>
-            </tr>
-            <tr>
-                <td class="imp">Корректор</td>
-                <td>200</td>
-            </tr>
-            <tr>
-                <td class="imp">Стерка</td>
-                <td>50</td>
-            </tr>
-            <tr>
-                <td class="imp">Линейка</td>
-                <td>100</td>
-            </tr>
-            <tr>
-                <td class="imp">Транспортир</td>
-                <td>150</td>
-            </tr>
-            <tr>
-                <td class="imp">Циркуль</td>
-                <td>200</td>
-            </tr>
-        </table>
-    </div>
-    <br />
-    <div id="Input">
-        Наименование:
-        <input type="text" name="Name" value="" />
-        <br /><br />
-        Цена товара:
-        <input type="number" min="0" name="Price" value="" />
-        <br /><br />
-        <button onclick="Add()">Занести в таблицу</button>
-    </div>
-    <div id="Table">
-        <p>
-            Ваши товары:
-        </p>
-        <table id="t" border="1">
-            <tr>
-                <th>Наименование</th>
-                <th>Цена товара</th>
-            </tr>
-        </table>
-        <br />
-        <button onclick="Cost()">Рассчитать стоимость</button>
-        <p id="result"></p>
-    </div>
+    <table border="1">
+        <tr>
+            <th>Наименование</th>
+            <th>Цена товара</th>
+        </tr>
+        <tr>
+            <td class="imp">Карандаш</td>
+            <td>100</td>
+        </tr>
+        <tr>
+            <td class="imp">Ручка</td>
+            <td>150</td>
+        </tr>
+        <tr>
+            <td class="imp">Корректор</td>
+            <td>200</td>
+        </tr>
+        <tr>
+            <td class="imp">Стерка</td>
+            <td>50</td>
+        </tr>
+        <tr>
+            <td class="imp">Линейка</td>
+            <td>100</td>
+        </tr>
+        <tr>
+            <td class="imp">Транспортир</td>
+            <td>150</td>
+        </tr>
+        <tr>
+            <td class="imp">Циркуль</td>
+            <td>200</td>
+        </tr>
+    </table>
+</div>
+<br/>
+<div id="Input">
+    Наименование:
+    <input type="text" name="Name" value=""/>
+    <br/><br/>
+    Цена товара:
+    <input type="number" min="0" name="Price" value=""/>
+    <br/><br/>
+    <button id="add">Занести в таблицу</button>
+</div>
+<div class="Table">
+    <p>
+        Ваши товары:
+    </p>
+    <table class="t" border="1">
+        <tr>
+            <th>Наименование</th>
+            <th>Цена товара</th>
+        </tr>
+        <tr>
+            <td class='cell'>qwer</td>
+            <td class='cell'>123</td>
+        </tr>
+    </table>
+    <br/>
+    <button id="cost">Рассчитать стоимость</button>
+    <p id="result"></p>
+</div>
 </body>
 </html>

@@ -42,11 +42,11 @@ $(document).ready(function () {
             line.append("<td></td>");
             var cell = line.find("td").last();
             cell.addClass("cell");
-            cell.text(name.text());
+            cell.text(name.val());
             line.append("<td></td>");
             cell = line.find("td").last();
             cell.addClass("cell");
-            cell.append(price.text());
+            cell.append(price.val());
             name.val("");
             price.val("");
         }
